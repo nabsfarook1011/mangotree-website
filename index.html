@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mango Tree — Indian Coastal Restaurant, Singapore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep: #1a1208;
+    --bark: #2e1f0e;
+    --spice: #b5451b;
+    --turmeric: #d4900a;
+    --cream: #f5efe4;
+    --sand: #e8ddc8;
+    --mist: #f9f5ee;
+    --white: #ffffff;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Jost', sans-serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--mist);
+    color: var(--deep);
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── ANNOUNCEMENT BANNER ── */
+  .relaunch-banner {
+    background: var(--spice);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 20px;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .relaunch-banner span {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--turmeric);
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--deep);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .nav-logo .wordmark {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+  }
+  .nav-logo .sub {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,239,228,0.7);
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .nav-links a:hover { color: var(--cream); }
+
+  .nav-cta {
+    background: var(--spice);
+    color: var(--white) !important;
+    padding: 10px 22px !important;
+    letter-spacing: 0.14em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: #9a3a16 !important; color: var(--white) !important; }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--cream);
+    transition: transform 0.3s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 92vh;
+    min-height: 580px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(26,18,8,0.88) 38%, rgba(26,18,8,0.3) 100%),
+      url('https://static.wixstatic.com/media/bf393d_44fbcba229e04514b6660aa5ccac7656~mv2_d_2592_1728_s_2.jpg/v1/fill/w_2500,h_1330,al_c/bf393d_44fbcba229e04514b6660aa5ccac7656~mv2_d_2592_1728_s_2.jpg') center/cover no-repeat;
+    transform: scale(1.04);
+    animation: heroPan 18s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroPan {
+    from { transform: scale(1.04) translateX(0); }
+    to   { transform: scale(1.04) translateX(-2%); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 680px;
+    animation: fadeUp 1.1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 36px; height: 1px;
+    background: var(--turmeric);
+  }
+  .hero-eyebrow span {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    font-weight: 400;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--white);
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: rgba(245,239,228,0.72);
+    margin-bottom: 40px;
+    letter-spacing: 0.02em;
+    max-width: 460px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--spice);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    font-weight: 400;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .btn-primary:hover { background: #9a3a16; transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: gap 0.2s;
+  }
+  .btn-ghost::after {
+    content: '→';
+    transition: transform 0.2s;
+  }
+  .btn-ghost:hover::after { transform: translateX(4px); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+  }
+  .hero-scroll .line {
+    width: 40px; height: 1px;
+    background: rgba(245,239,228,0.35);
+  }
+  .hero-scroll span {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245,239,228,0.4);
+    font-weight: 400;
+  }
+
+  /* ── REOPEN STATEMENT ── */
+  .reopen-section {
+    background: var(--deep);
+    padding: 72px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .reopen-text .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .reopen-text h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .reopen-text h2 em {
+    font-style: italic;
+    color: var(--sand);
+  }
+
+  .reopen-text p {
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: rgba(245,239,228,0.6);
+    margin-bottom: 36px;
+  }
+
+  .reopen-stats {
+    display: flex;
+    gap: 40px;
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .stat .unit {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--turmeric);
+  }
+  .stat .desc {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,239,228,0.45);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  .reopen-visual {
+    position: relative;
+  }
+  .reopen-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+  }
+  .reopen-badge {
+    position: absolute;
+    bottom: -24px;
+    left: -24px;
+    background: var(--spice);
+    color: var(--white);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-display);
+  }
+  .reopen-badge .big { font-size: 2rem; font-weight: 500; line-height: 1; }
+  .reopen-badge .small { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-body); font-weight: 400; margin-top: 4px; opacity: 0.85; }
+
+  /* ── PRESS STRIP ── */
+  .press-strip {
+    background: var(--sand);
+    padding: 48px 80px;
+    border-top: 1px solid rgba(46,31,14,0.12);
+    border-bottom: 1px solid rgba(46,31,14,0.12);
+  }
+
+  .press-strip .label {
+    text-align: center;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(26,18,8,0.4);
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(46,31,14,0.1);
+  }
+
+  .press-item {
+    background: var(--sand);
+    padding: 28px 32px;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .press-item:hover { background: var(--cream); }
+
+  .press-pub {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .press-quote {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--deep);
+    line-height: 1.5;
+  }
+
+  /* ── SIGNATURE DISHES ── */
+  .dishes-section {
+    padding: 96px 80px;
+    background: var(--mist);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 56px;
+  }
+
+  .section-header-left .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--spice);
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .section-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.1;
+  }
+  .section-header h2 em { font-style: italic; }
+
+  .section-header .view-all {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--spice);
+    text-decoration: none;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--spice);
+  }
+  .section-header .view-all:hover { gap: 14px; }
+
+  .dishes-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3px;
+  }
+
+  .dish-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .dish-card:first-child {
+    grid-row: span 2;
+  }
+
+  .dish-img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .dish-card:first-child .dish-img { min-height: 540px; }
+
+  .dish-card:hover .dish-img { transform: scale(1.05); }
+
+  .dish-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,18,8,0.85) 0%, transparent 55%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    transition: background 0.3s;
+  }
+  .dish-card:hover .dish-overlay {
+    background: linear-gradient(to top, rgba(26,18,8,0.92) 0%, rgba(26,18,8,0.2) 60%);
+  }
+
+  .dish-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .dish-card:first-child .dish-name { font-size: 1.7rem; }
+
+  .dish-desc {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 6px;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-weight: 300;
+  }
+  .dish-card:hover .dish-desc { max-height: 60px; }
+
+  .dish-tag {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    font-weight: 400;
+  }
+
+  /* ── EXPERIENCE SPLIT ── */
+  .experience-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .exp-visual {
+    position: relative;
+    overflow: hidden;
+  }
+  .exp-visual img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+  .exp-visual:hover img { transform: scale(1.04); }
+
+  .exp-content {
+    background: var(--bark);
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .exp-content .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .exp-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .exp-content h2 em { font-style: italic; }
+
+  .exp-content p {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: rgba(245,239,228,0.62);
+    margin-bottom: 40px;
+  }
+
+  .exp-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+
+  .exp-feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .exp-feat-icon {
+    width: 2px;
+    height: 32px;
+    background: var(--spice);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .exp-feat-text .title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 2px;
+  }
+  .exp-feat-text .body {
+    font-size: 0.78rem;
+    color: rgba(245,239,228,0.5);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* ── COASTAL ORIGINS ── */
+  .origins-section {
+    padding: 96px 80px;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .origins-content .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--spice);
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .origins-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .origins-content h2 em { font-style: italic; }
+
+  .origins-content p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: rgba(26,18,8,0.65);
+    margin-bottom: 20px;
+  }
+
+  .origins-map-visual {
+    position: relative;
+  }
+
+  .origins-image-stack {
+    position: relative;
+    padding-bottom: 60px;
+    padding-right: 60px;
+  }
+  .origins-image-stack .img-main {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+  }
+  .origins-image-stack .img-secondary {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 55%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 6px solid var(--cream);
+    display: block;
+  }
+
+  /* ── VISIT SECTION ── */
+  .visit-section {
+    background: var(--deep);
+    padding: 96px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .visit-content .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .visit-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 36px;
+  }
+
+  .visit-details {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .visit-item .title {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245,239,228,0.4);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .visit-item .value {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+  .visit-item .value a {
+    color: var(--turmeric);
+    text-decoration: none;
+  }
+  .visit-item .value a:hover { text-decoration: underline; }
+
+  .visit-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 15px 28px;
+    font-weight: 400;
+    transition: background 0.2s;
+    width: fit-content;
+  }
+  .btn-whatsapp:hover { background: #1fba58; }
+
+  .visit-map {
+    position: relative;
+  }
+  .visit-map-frame {
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--bark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .visit-map-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(30%) contrast(1.1);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #110d05;
+    padding: 60px 80px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 32px;
+  }
+
+  .footer-brand .wordmark {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .footer-brand .sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .footer-brand p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: rgba(245,239,228,0.45);
+    max-width: 260px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245,239,228,0.35);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: rgba(245,239,228,0.55);
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+  .footer-col ul li a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-bottom p {
+    font-size: 0.7rem;
+    color: rgba(245,239,228,0.25);
+    letter-spacing: 0.04em;
+  }
+  .footer-social {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-social a {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,239,228,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .footer-social a:hover { color: var(--cream); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .hero-content { padding: 0 28px; max-width: 100%; }
+    .hero-scroll { left: 28px; }
+    .hero h1 { font-size: 2.4rem; }
+
+    .reopen-section,
+    .origins-section,
+    .visit-section {
+      grid-template-columns: 1fr;
+      padding: 60px 28px;
+      gap: 48px;
+    }
+
+    .reopen-badge { width: 90px; height: 90px; left: -12px; bottom: -12px; }
+    .reopen-badge .big { font-size: 1.6rem; }
+
+    .press-strip { padding: 40px 28px; }
+    .press-grid { grid-template-columns: 1fr 1fr; }
+
+    .dishes-section { padding: 64px 28px; }
+    .dishes-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .dish-card:first-child { grid-row: span 1; grid-column: span 2; }
+    .dish-card:first-child .dish-img { min-height: 320px; }
+
+    .experience-section { grid-template-columns: 1fr; }
+    .exp-visual img { min-height: 320px; }
+    .exp-content { padding: 48px 28px; }
+
+    .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+    .reopen-stats { gap: 24px; }
+
+    footer { padding: 48px 28px 32px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+
+  @media (max-width: 560px) {
+    .press-grid { grid-template-columns: 1fr; }
+    .dishes-grid { grid-template-columns: 1fr; }
+    .dish-card:first-child { grid-column: span 1; }
+    .footer-top { grid-template-columns: 1fr; }
+    .origins-image-stack { padding-bottom: 40px; padding-right: 40px; }
+    .reopen-stats { flex-wrap: wrap; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+  }
+
+  /* ── DECORATIVE DIVIDER ── */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 32px 0;
+    color: var(--turmeric);
+    opacity: 0.5;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    width: 80px; height: 1px;
+    background: currentColor;
+  }
+  .ornament-inner {
+    width: 6px; height: 6px;
+    border: 1px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div class="relaunch-banner">
+  Reopening August 2025 <span></span> Singapore's First Indian Coastal Kitchen <span></span> East Coast Road, Katong
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" style="text-decoration:none">
+    <span class="wordmark">The Mango Tree</span>
+    <span class="sub">Indian Coastal Restaurant</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#dishes">Menu</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#visit">Events</a></li>
+    <li><a href="#visit">Find Us</a></li>
+    <li><a href="#visit" class="nav-cta">Reserve a Table</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="this.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Est. 2001, Katong</span>
+    </div>
+    <h1>Singapore's First<br><em>Indian Coastal</em><br>Kitchen</h1>
+    <p class="hero-sub">From the Malabar Coast to East Coast Road — two decades of Kerala, Goa and the flavours the rest of Singapore forgot to tell you about.</p>
+    <div class="hero-actions">
+      <a href="#visit" class="btn-primary">Reserve a Table</a>
+      <a href="#dishes" class="btn-ghost">Explore the Menu</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="line"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- REOPEN STATEMENT -->
+<section class="reopen-section">
+  <div class="reopen-text">
+    <div class="label">A New Chapter</div>
+    <h2>We've been away.<br><em>We come back better.</em></h2>
+    <p>After a period of renewal, The Mango Tree reopens in August 2025 with a refreshed kitchen, a reimagined dining space, and the same recipes that have drawn guests to Katong for over two decades. Some things don't need changing. We know which ones those are.</p>
+    <div class="reopen-stats">
+      <div class="stat">
+        <div class="num">24<span class="unit">+</span></div>
+        <div class="desc">Years in Katong</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="desc">Floors of dining</div>
+      </div>
+      <div class="stat">
+        <div class="num">60<span class="unit">+</span></div>
+        <div class="desc">Dishes on the menu</div>
+      </div>
+    </div>
+  </div>
+  <div class="reopen-visual">
+    <img class="reopen-img"
+      src="https://static.wixstatic.com/media/bf393d_d2efccf60dab42558b38a28201abee8a~mv2.jpg/v1/crop/x_0,y_0,w_4231,h_2357/fill/w_1200,h_800,al_c,q_90/bf393d_d2efccf60dab42558b38a28201abee8a~mv2.jpg"
+      alt="The Mango Tree interior" />
+    <div class="reopen-badge">
+      <span class="big">Aug</span>
+      <span class="small">2025 Relaunch</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS STRIP -->
+<section class="press-strip">
+  <div class="label">As Featured In</div>
+  <div class="press-grid">
+    <div class="press-item">
+      <div class="press-pub">Weekend Journal</div>
+      <div class="press-quote">"Breaks all the stereotypes — few restaurants mix northern and southern this boldly."</div>
+    </div>
+    <div class="press-item">
+      <div class="press-pub">The Business Times</div>
+      <div class="press-quote">"Surprises with its understated décor and cuisine. Undeniably a pleasurable experience."</div>
+    </div>
+    <div class="press-item">
+      <div class="press-pub">Wine &amp; Dine</div>
+      <div class="press-quote">"Authentic coastal food fare from the Malabar Coast to the cities of Maharashtra."</div>
+    </div>
+    <div class="press-item">
+      <div class="press-pub">The New Paper</div>
+      <div class="press-quote">"Native chefs were brought over to recreate the specialties that impressed."</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE DISHES -->
+<section class="dishes-section" id="dishes">
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="label">What We're Known For</div>
+      <h2>Signature <em>Dishes</em></h2>
+    </div>
+    <a href="#" class="view-all">Full Menu →</a>
+  </div>
+
+  <div class="dishes-grid">
+    <!-- Large hero dish -->
+    <div class="dish-card">
+      <img class="dish-img"
+        src="https://static.wixstatic.com/media/bf393d_b0d495126c85411b9e71cffb9681f3f2~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_90/bf393d_b0d495126c85411b9e71cffb9681f3f2~mv2.jpg"
+        alt="Mango Tree Garlic Crab" />
+      <div class="dish-overlay">
+        <span class="dish-tag">Signature · Must Order</span>
+        <div class="dish-name">The Mango Tree<br>Garlic Crab</div>
+        <div class="dish-desc">Whole Sri Lankan crab, wok-tossed in our house-made garlic and black pepper sauce. Pre-order recommended.</div>
+      </div>
+    </div>
+    <!-- Small dishes -->
+    <div class="dish-card">
+      <img class="dish-img"
+        src="https://static.wixstatic.com/media/bf393d_51a541fc8e614d1585e2018c9c10286e~mv2.jpg/v1/fill/w_600,h_400,al_c,q_85/bf393d_51a541fc8e614d1585e2018c9c10286e~mv2.jpg"
+        alt="Meen Pollichathu" />
+      <div class="dish-overlay">
+        <span class="dish-tag">Kerala Coastal</span>
+        <div class="dish-name">Meen Pollichathu</div>
+        <div class="dish-desc">Snapper wrapped and roasted in banana leaf with Kerala spices.</div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <img class="dish-img"
+        src="https://static.wixstatic.com/media/bf393d_ffd89b01f19a4141bb4d39c470d2fad0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_85/bf393d_ffd89b01f19a4141bb4d39c470d2fad0~mv2.jpg"
+        alt="Murgh Makhani" />
+      <div class="dish-overlay">
+        <span class="dish-tag">North Indian</span>
+        <div class="dish-name">Murgh Makhani</div>
+        <div class="dish-desc">Our house butter chicken — slow-cooked in a rich tomato and cream sauce.</div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <img class="dish-img"
+        src="https://static.wixstatic.com/media/bf393d_7acb6aea58b843a3be8c6ba1428a57bc~mv2.jpg/v1/fill/w_600,h_400,al_c,q_85/bf393d_7acb6aea58b843a3be8c6ba1428a57bc~mv2.jpg"
+        alt="Kerala Fish Curry" />
+      <div class="dish-overlay">
+        <span class="dish-tag">South Indian</span>
+        <div class="dish-name">Kerala Fish Curry</div>
+        <div class="dish-desc">Tangy kokum-based curry with fresh fish, coconut milk and mustard seeds.</div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <img class="dish-img"
+        src="https://static.wixstatic.com/media/bf393d_b9c1e0184a5f4c7b95437c400bf85854~mv2.jpeg/v1/fill/w_600,h_400,al_c,q_85/bf393d_b9c1e0184a5f4c7b95437c400bf85854~mv2.jpeg"
+        alt="Malabar Seafood Platter" />
+      <div class="dish-overlay">
+        <span class="dish-tag">For the Table</span>
+        <div class="dish-name">Malabar Seafood Platter</div>
+        <div class="dish-desc">Lobster, squid, tiger prawn, mussel, kingfish and snapper in Kerala marinade.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE SPLIT -->
+<section class="experience-section" id="experience">
+  <div class="exp-visual">
+    <img
+      src="https://static.wixstatic.com/media/bf393d_abb12f3612d84ac7a3d68ede3ace9dcc~mv2.jpg/v1/crop/x_0,y_0,w_4204,h_2355/fill/w_1200,h_800,al_c,q_90/bf393d_abb12f3612d84ac7a3d68ede3ace9dcc~mv2.jpg"
+      alt="The Mango Tree dining room" />
+  </div>
+  <div class="exp-content">
+    <div class="label">The Space</div>
+    <h2>A dining room<br><em>steeped in intention</em></h2>
+    <p>Two floors. Two moods. The ground floor is alive with energy and casual warmth. The second floor is reserved for the evenings when the occasion deserves a quieter table.</p>
+    <div class="exp-features">
+      <div class="exp-feat">
+        <div class="exp-feat-icon"></div>
+        <div class="exp-feat-text">
+          <div class="title">Ground Floor Dining</div>
+          <div class="body">Open kitchen energy, walk-ins welcome, ideal for families and casual groups.</div>
+        </div>
+      </div>
+      <div class="exp-feat">
+        <div class="exp-feat-icon"></div>
+        <div class="exp-feat-text">
+          <div class="title">Second Floor Private Dining</div>
+          <div class="body">Intimate setting for celebrations, anniversaries, and corporate dinners.</div>
+        </div>
+      </div>
+      <div class="exp-feat">
+        <div class="exp-feat-icon"></div>
+        <div class="exp-feat-text">
+          <div class="title">Events &amp; Catering</div>
+          <div class="body">Bento sets, buffet setups, and full-service catering for any occasion.</div>
+        </div>
+      </div>
+    </div>
+    <a href="#visit" class="btn-primary">Plan Your Visit</a>
+  </div>
+</section>
+
+<!-- COASTAL ORIGINS -->
+<section class="origins-section">
+  <div class="origins-content">
+    <div class="label">Our Story</div>
+    <h2>From the <em>Malabar Coast</em><br>to Katong</h2>
+    <p>When The Mango Tree opened in 2001, there was no other restaurant in Singapore doing both South Indian Coastal and North Indian cuisine under one roof. That was the point.</p>
+    <p>Our recipes come directly from the kitchens of Kerala and Goa — brought over, refined, and kept honest. The spices are fresh. The methods are traditional. The chefs know where they're from.</p>
+    <a href="#" class="btn-primary" style="background:var(--spice);color:var(--white)">Our History →</a>
+  </div>
+  <div class="origins-map-visual">
+    <div class="origins-image-stack">
+      <img class="img-main"
+        src="https://static.wixstatic.com/media/bf393d_6f0e38be568c4b5f861f84015236892b~mv2_d_5184_3456_s_4_2.jpg/v1/crop/x_0,y_140,w_5120,h_2617/fill/w_900,h_700,al_c,q_85/bf393d_6f0e38be568c4b5f861f84015236892b~mv2.jpg"
+        alt="Mango Tree ambiance" />
+      <img class="img-secondary"
+        src="https://static.wixstatic.com/media/bf393d_ff89e970b9e14b74808be2e45332d7ff~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85/bf393d_ff89e970b9e14b74808be2e45332d7ff~mv2.jpg"
+        alt="Erachi Ularthiyathu" />
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / FIND US -->
+<section class="visit-section" id="visit">
+  <div class="visit-content">
+    <div class="label">Find Us</div>
+    <h2>Come to the table</h2>
+    <div class="visit-details">
+      <div class="visit-item">
+        <div class="title">Address</div>
+        <div class="value">91 East Coast Road<br>Singapore 428791</div>
+      </div>
+      <div class="visit-item">
+        <div class="title">Hours</div>
+        <div class="value">
+          Tue–Sun: Lunch 12–3pm · Dinner 6–10pm<br>
+          Closed Mondays
+        </div>
+      </div>
+      <div class="visit-item">
+        <div class="title">Reservations &amp; Enquiries</div>
+        <div class="value">
+          <a href="tel:+6564401285">+65 6440 1285</a><br>
+          <a href="mailto:services@themangotree.com.sg">services@themangotree.com.sg</a>
+        </div>
+      </div>
+    </div>
+    <div class="visit-actions">
+      <a href="https://wa.me/6597286941" class="btn-whatsapp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="tel:+6564401285" class="btn-primary">Call to Reserve</a>
+    </div>
+  </div>
+  <div class="visit-map">
+    <div class="visit-map-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7784!2d103.9024!3d1.3048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19268d97e3a3%3A0x7b62b7c7e86d5a00!2s91%20East%20Coast%20Rd%2C%20Singapore%20428791!5e0!3m2!1sen!2ssg!4v1"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">The Mango Tree</div>
+      <div class="sub">Indian Coastal Restaurant</div>
+      <p>Singapore's first restaurant specialising in both South Indian Coastal and North Indian cuisine. Est. 2001, East Coast Road.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Signature Dishes</a></li>
+        <li><a href="#">Delivery & Takeaway</a></li>
+        <li><a href="#">Photo Gallery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <ul>
+        <li><a href="#">Reserve a Table</a></li>
+        <li><a href="#">Events & Catering</a></li>
+        <li><a href="#">Private Dining</a></li>
+        <li><a href="#">Membership</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">In the News</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 The Mango Tree. All rights reserved. 91 East Coast Road, Singapore 428791.</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/themangotree_indiancoastal/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/themangotree.indiancoastal.restaurant" target="_blank">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
