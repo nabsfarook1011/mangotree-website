@@ -1,0 +1,143 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://mangotree-website.pages.dev
+display_url: https://mangotree-website.pages.dev
+
+collections:
+
+  # ── RESTAURANT INFO ──
+  - name: "settings"
+    label: "Restaurant Settings"
+    files:
+
+      - name: "general"
+        label: "General Info"
+        file: "_data/general.json"
+        fields:
+          - { label: "Restaurant Name", name: "name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "WhatsApp Number (with country code, no +)", name: "whatsapp", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "Facebook URL", name: "facebook", widget: "string" }
+
+      - name: "hours"
+        label: "Opening Hours"
+        file: "_data/hours.json"
+        fields:
+          - { label: "Hours Line 1", name: "line1", widget: "string", hint: "e.g. Tue–Sun: Lunch 12–3pm · Dinner 6–10pm" }
+          - { label: "Hours Line 2", name: "line2", widget: "string", hint: "e.g. Closed Mondays" }
+          - { label: "Closed For Relaunch Notice", name: "relaunch_notice", widget: "boolean", default: true }
+          - { label: "Relaunch Banner Text", name: "banner", widget: "string", hint: "Text shown in the top announcement bar" }
+
+      - name: "hero"
+        label: "Homepage Hero"
+        file: "_data/hero.json"
+        fields:
+          - { label: "Eyebrow Text", name: "eyebrow", widget: "string", hint: "Small text above headline, e.g. Est. 2001, Katong" }
+          - { label: "Headline Line 1", name: "headline1", widget: "string" }
+          - { label: "Headline Line 2 (italic)", name: "headline2", widget: "string" }
+          - { label: "Headline Line 3", name: "headline3", widget: "string" }
+          - { label: "Subheading", name: "subheading", widget: "text" }
+          - { label: "Primary Button Text", name: "cta_primary", widget: "string" }
+          - { label: "Secondary Button Text", name: "cta_secondary", widget: "string" }
+          - label: "Hero Background Image"
+            name: "bg_image"
+            widget: "image"
+
+      - name: "reopen"
+        label: "Relaunch Section"
+        file: "_data/reopen.json"
+        fields:
+          - { label: "Section Label", name: "label", widget: "string", hint: "e.g. A New Chapter" }
+          - { label: "Heading Line 1", name: "heading1", widget: "string" }
+          - { label: "Heading Line 2 (italic)", name: "heading2", widget: "string" }
+          - { label: "Body Text", name: "body", widget: "text" }
+          - { label: "Relaunch Month & Year", name: "badge_month", widget: "string", hint: "e.g. Aug" }
+          - { label: "Badge Subtext", name: "badge_sub", widget: "string", hint: "e.g. 2025 Relaunch" }
+          - label: "Section Image"
+            name: "image"
+            widget: "image"
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Unit/Symbol", name: "unit", widget: "string", required: false }
+              - { label: "Description", name: "desc", widget: "string" }
+
+  # ── MENU DISHES ──
+  - name: "dishes"
+    label: "Signature Dishes"
+    folder: "_data/dishes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Dish Name", name: "title", widget: "string" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Category Tag", name: "tag", widget: "string", hint: "e.g. Kerala Coastal, North Indian, Signature · Must Order" }
+      - label: "Dish Photo"
+        name: "image"
+        widget: "image"
+      - { label: "Featured (shows as large hero card)", name: "featured", widget: "boolean", default: false }
+      - { label: "Display Order", name: "order", widget: "number", default: 1 }
+      - { label: "Available", name: "active", widget: "boolean", default: true }
+
+  # ── PRESS QUOTES ──
+  - name: "press"
+    label: "Press Quotes"
+    folder: "_data/press"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Publication Name", name: "publication", widget: "string" }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Display Order", name: "order", widget: "number", default: 1 }
+      - { label: "Active", name: "active", widget: "boolean", default: true }
+
+  # ── EXPERIENCE / DINING FEATURES ──
+  - name: "experience"
+    label: "Dining Experience"
+    files:
+      - name: "experience_content"
+        label: "Experience Section"
+        file: "_data/experience.json"
+        fields:
+          - { label: "Section Label", name: "label", widget: "string" }
+          - { label: "Heading Line 1", name: "heading1", widget: "string" }
+          - { label: "Heading Line 2 (italic)", name: "heading2", widget: "string" }
+          - { label: "Body Text", name: "body", widget: "text" }
+          - label: "Section Image"
+            name: "image"
+            widget: "image"
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Feature Title", name: "title", widget: "string" }
+              - { label: "Feature Description", name: "body", widget: "text" }
+
+  # ── PROMOTIONS / MARKETING CAMPAIGNS ──
+  - name: "promotions"
+    label: "Promotions & Campaigns"
+    folder: "_data/promotions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Campaign Name", name: "title", widget: "string" }
+      - { label: "Active", name: "active", widget: "boolean", default: true }
+      - { label: "Banner Text", name: "banner_text", widget: "string", hint: "Short text for the announcement bar" }
+      - { label: "Start Date", name: "start_date", widget: "datetime" }
+      - { label: "End Date", name: "end_date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - label: "Promotional Image"
+        name: "image"
+        widget: "image"
+        required: false
